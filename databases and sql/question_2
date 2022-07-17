@@ -1,0 +1,11 @@
+QUESTION 2:
+
+CREATE table games(id serial primary key, yr int, city varchar(50));
+create table city(id serial primary key, name varchar, country varchar);
+alter table city add constraint "city_country" UNIQUE (name);
+ALTER TABLE games ADD CONSTRAINT "city_games_fk" FOREIGN KEY(city) references city(name);
+insert into city(name, country) values('Sydnney', 'Australia'), ('Athens', 'Greece'), ('Beijing', 'China'), ('London', 'UK');
+insert into games(yr, city) values (2004, 'Athens'), (2008, 'Beijing'), (2012, 'London'), (1948, 'London'), (1896, 'Athens');
+select city, yr AS year, country from games AS gm INNER JOIN city as ct ON gm.city = ct.name;
+
+NB: Database used, PostgreSQL

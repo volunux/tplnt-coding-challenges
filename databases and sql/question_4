@@ -1,0 +1,5 @@
+QUESTION 4:
+
+SELECT userid, floor(avg(duration)) AS duration FROM sessions GROUP BY userid HAVING COUNT(userid) > 1;
+
+NB: Database used, PostgreSQL

@@ -1,0 +1,21 @@
+QUESTION 3:
+
+SQL Query:
+
+SELECT city, yr, country from games AS gm LEFT JOIN city AS ct ON gm.city = ct.name;
+
+The query will select all the columns city, yr, country.
+It create a new row for the result set if there is a matching value for gm.city and ct.name
+However, the evaluation of table rows will be such that the table games will be the first and city for second (being considered for possible match compared to values in games).
+If there is a non-null value for table games but not for city, a new row will be created. However, the city in games will be filled with the actual value while for name in city will be filled with null value.
+
+
+SQL Query 2
+SELECT city, yr, country from games AS gm RIGHT JOIN city AS ct ON gm.city = ct.name;
+
+The query will select all the columns city, yr, country.
+It create a new row for the result set if there is a matching value for gm.city and ct.name
+However, the evaluation of table rows will be reversed such that the table city will be the first and games for second (being considered for possible match compared to values in city).
+If there is a non-null value for table city but not for games, a new row will be created. However, the name in city will be filled with the actual value while for city in games will be filled with null value.
+
+NB: Database used, PostgreSQL
