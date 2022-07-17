@@ -1,5 +1,7 @@
 package com.tplnt.programming_algo;
 
+import java.util.Scanner;
+
 public class Question2 {
 	
 	/**
@@ -23,7 +25,10 @@ public class Question2 {
 	}
 	
 	public static void main(String...args) {
-		stairCasePrinter(6);
+		try (Scanner scanner = new Scanner(System.in)) {
+			int input = scanner.nextInt();
+			stairCasePrinter(input);	
+		}
 	}
 
 }
